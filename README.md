@@ -55,11 +55,6 @@ https://www.tinkercad.com/things/52x77gU6iEI-opendoorsystemelectronic
 - **byte oszlopPin[oszlopok] = {5, 4, 3, 2};** -
 - 
 
-###  Állapotváltozók szerepe
-
-- **int blindPos = 50;** — A redőny pozícióját tárolja 0–100% között. Ez alapján állítjuk a szervót.
-- **bool autoEnabled = false;** — Alapból kikapcsolt automata mód. Csak gombnyomásra lehet bekapcsolni.
-- **unsigned long bootQuietMs = 5000;** — Az indulási csendes idő. 5 másodpercig nem mozdul a rendszer bekapcsolás után.
 
 ### Technikai működés
 
