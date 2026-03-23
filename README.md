@@ -6,6 +6,8 @@ A projektet az az ötlet hívta életre, hogy a szerverterembe ne csak kulcsal l
 és erről hangjelzést is ad. 5 másodperc utána szervó zárja az ajtó nyitó mechanizmust. 
 Erről digitális kijelzőn ad információt részünkre.
 
+![OpenDoorSystem_Electronic_Projekt.png](https://github.com/bekescomputer/AutmatOpenDoorProjectThinkerCad/blob/main/OpenDoorSystem_Electronic_Projekt.png?raw=true)
+
 ### Default belépés
 
 Az ajtó nyitása alap értékként az 1234# kódot veszi fel.
@@ -24,6 +26,15 @@ https://www.tinkercad.com/things/52x77gU6iEI-opendoorsystemelectronic
 | Név                                                   | Mennyiség (db)  | Öszetevő                                                                        |
 |-------------------------------------------------------|-----------------|---------------------------------------------------------------------------------|
 | U1                                                    | 1               | Arduino Uno R3                                                                  |
+| U2                                                    | 1               | PCF8574-alapú, 39 (0x27) LCD 16 x 2 (I2C)                                       |
+| U3                                                    | 1               | PCF8574-alapú, 38 (0x26) LCD 16 x 2 (I2C)                                       |
+| Meter1                                                | 1               | Feszültség Multiméter                                                           |
+| T2                                                    | 1               | nMOS tranzisztor (MOSFET)                                                       |
+| R1                                                    | 1               | 10 kΩ Ellenállás                                                                |
+| R3                                                    | 1               | 4 kΩ Ellenállás                                                                 |
+| SERVO1                                                | 1               | Pozicionális Mikroszervo                                                        |
+| PIEZO1                                                | 1               | Piezo                                                                           |
+| KEYPAD1                                               | 1               | 4x4-es billentyűzet                                                             |
 
 
 ### A teljes Forráskód:
