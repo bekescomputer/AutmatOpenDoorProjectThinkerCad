@@ -61,6 +61,14 @@ https://www.tinkercad.com/things/52x77gU6iEI-opendoorsystemelectronic
 - **bool autoEnabled = false;** — Alapból kikapcsolt automata mód. Csak gombnyomásra lehet bekapcsolni.
 - **unsigned long bootQuietMs = 5000;** — Az indulási csendes idő. 5 másodpercig nem mozdul a rendszer bekapcsolás után.
 
+### Technikai működés
+
+A rendszer áram alá helyezése után egy 5 V feszültséggel dolgozunk. Két kiejlzőt kapott, egyben a PIN kód bekérése és annk állapot vissza jelzéséről kapunk információt, még a másiknál pedig kiírja hogy adjuk meg a belépési kódunkat, illetve hogy az ajtó nyílik, vagy záródik. 
+A bekötött 4x4-es mátrix billenytűzeten tudunk belépési kódot beírni, melyet a **#** jellel tudunk nyugtázni , illetve ha elrontottuk akkor a **C** -vel tudunk teljes törlést kérni. 
+Úgy épül fel a rendszer hogy egy N transzisztor (MOSZFET) vezérli mind a szervó motor, mind pedig a Piezo megszólaltatását. Elláttam mind kettőt lehúzó ellenállással, hogy alap esetben ne legyen szellem zaj a rendszerben, így csak 6-8 mV feszültség (üresjárati) van az áramkörben. 
+Jó kód megadása esetén **1234#** kiírja a rendszer hogy az ajtó nyílik, és a szervó 90 fokkal elfordul. Ekkor a Piezzo sípol mind addig amíg el nem telik az 5 másodperc. Ekkor kiírja hogy az ajtó záródik, és a szervó vissza áll alap állapotba.
+Ilyenkor a MOSZFET megvonja a feszültséget, és visszatér üresjáratba. A MOSZFET G - Kapu lábát az Arduino 10-es digitális lábára kötöttem be. 
+
 ### A teljes Forráskód:
 ```			
 // Fejlécállományok betöltése
