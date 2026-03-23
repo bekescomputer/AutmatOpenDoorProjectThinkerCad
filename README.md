@@ -1,3 +1,5 @@
+LEírás
+
 Forráskód:
 
 // Fejlécállományok betöltése
