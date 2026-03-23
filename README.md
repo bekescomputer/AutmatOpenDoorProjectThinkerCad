@@ -1,6 +1,20 @@
 #  Ajtó nyitó mechanizmus szerterteremhez
 
-Forráskód:
+### Projekt leírása:
+
+A projektet az az ötlet hívta életre, hogy a szerverterembe ne cska kulcsal lehessen bemenni, hanem azbonítással. A rendszer a jelen állapotában csak fixen beégetett kódot tud lekezelni, de eltudja dönteni jó-e vagy sem. Helyes kód esetén a nyitó mechanizmus kinyitja a szervón keresztül az ajtót
+és erről hangjelzést is ad. 5 másodperc utána s zervó zárja az ajtó nyitó mechanizmust. 
+Erről digitális kijelzőn ad információt részünkre.
+
+### Default belépés
+
+Az ajtó nyitása alap értékként az 1234# kódot veszi fel.
+
+A # jel zárja a kód bevitelt
+A * pedig törli ha rosszul nyomtunk le egy értéket
+
+
+### Forráskód:
 ```			
 			// Fejlécállományok betöltése
 			#include <Keypad.h>
@@ -99,6 +113,11 @@ Forráskód:
 			        lcd_bal.print("Az ajto zarodik!");
 			     		delay(1000);
 			    	  digitalWrite(nmosPin, LOW);
+					lcd_bal.clear();
+					lcd_bal.setCursor(0,0);
+						lcd_bal.print("Kerlek add meg a ");	
+						lcd_bal.setCursor(0,1);
+						lcd_bal.print("belepesi kododat");
 			    
 			      } 
 			      else 
