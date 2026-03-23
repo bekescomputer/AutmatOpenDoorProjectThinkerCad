@@ -1,9 +1,9 @@
-#  Ajtó nyitó mechanizmus szerverterteremhez
+#  Ajtó nyitó mechanizmus szervertereremhez
 
 ### Projekt leírása:
 
-A projektet az az ötlet hívta életre, hogy a szerverterembe ne cska kulcsal lehessen bemenni, hanem azbonítással. A rendszer a jelen állapotában csak fixen beégetett kódot tud lekezelni, de eltudja dönteni jó-e vagy sem. Helyes kód esetén a nyitó mechanizmus kinyitja a szervón keresztül az ajtót
-és erről hangjelzést is ad. 5 másodperc utána s zervó zárja az ajtó nyitó mechanizmust. 
+A projektet az az ötlet hívta életre, hogy a szerverterembe ne csak kulcsal lehessen bemenni, hanem azbonítással. A rendszer a jelen állapotában csak fixen beégetett kódot tud lekezelni, de eltudja dönteni jó-e vagy sem. Helyes kód esetén a nyitó mechanizmus kinyitja a szervón keresztül az ajtót
+és erről hangjelzést is ad. 5 másodperc utána szervó zárja az ajtó nyitó mechanizmust. 
 Erről digitális kijelzőn ad információt részünkre.
 
 ### Default belépés
@@ -12,6 +12,18 @@ Az ajtó nyitása alap értékként az 1234# kódot veszi fel.
 
 A # jel zárja a kód bevitelt
 A C pedig törli ha rosszul nyomtunk le egy értéket
+
+### Projekt elérhetősége
+
+A projekt az alábbi linken elérhető a TinkerCad-ban
+
+https://www.tinkercad.com/things/52x77gU6iEI-opendoorsystemelectronic
+
+### Alkatrész készlet
+
+| Név                                                   | Mennyiség (db)  | Öszetevő                                                                        |
+|-------------------------------------------------------|-----------------|---------------------------------------------------------------------------------|
+| U1                                                    | 1               | Arduino Uno R3                                                                  |
 
 
 ### A teljes Forráskód:
@@ -135,7 +147,7 @@ void loop()
 			lcd_jobb.clear();
 			lcd_jobb.print("PIN kod:");
 		} 
-		else if (key == '*') 
+		else if (key == 'C') 
 		{  
 			// Torles
 			bevitel = "";
