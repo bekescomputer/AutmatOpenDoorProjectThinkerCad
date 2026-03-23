@@ -1,4 +1,4 @@
-LEírás
+#  Ajtó nyitó mechanizmus szerterteremhez
 
 Forráskód:
 ```			
