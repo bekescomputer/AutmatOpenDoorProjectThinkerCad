@@ -1,7 +1,7 @@
 LEírás
 
 Forráskód:
-			
+```			
 			// Fejlécállományok betöltése
 			#include <Keypad.h>
 			#include <LiquidCrystal_I2C.h>
@@ -127,3 +127,4 @@ Forráskód:
 			    }
 			  }
 			}
+```
