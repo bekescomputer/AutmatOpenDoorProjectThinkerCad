@@ -37,6 +37,30 @@ https://www.tinkercad.com/things/52x77gU6iEI-opendoorsystemelectronic
 | KEYPAD1                                               | 1               | 4x4-es billentyűzet                                                             |
 
 
+###  Változók és pinek
+
+- **const int nmosPin = 10;** — A MOSFET **G** lába innen kapja majd az utasítást mikor kell neki az áramot kapcsolnia. Ezen a MOSFET-en keresztül történik, hogy a szervó motor ne kapjon folyamatosan 5 V-ot. 
+- **int SzervoPin = 11;** — Az Arduino 11-es digitális csatolási pontja, ami közvetlen utasítást tud küldeni a szervó motornak. 
+- **int piezoPin = A2;** — Az Arduino A2 analóg lábára csatlakozó adatpont, amin keresztül a kis bekötött Piezo hangszórón tudok egy sipoló hangot adni az ajtó nyitvatartásig. 
+- **const String helyesKod = "1234";** — A beléptető rendszer jelenlegi egyetlen beégetett kódja. 
+- **const byte sorok = 4;**  -  A 4x4-es Mátrix billenytűzet sorai
+- **const byte oszlopok = 4;** -  A 4x4-es Mátrix billenytűzet oszlopai
+- **char gombok[sorok][oszlopok] = {
+  {'1','2','3','A'},
+  {'4','5','6','B'},
+  {'7','8','9','C'},
+  {'*','0','#','D'}
+};** - A 4x4-es Mátrix billenytűzet karakter térképe
+- **byte sorPin[sorok] = {9, 8, 7, 6};** - 
+- **byte oszlopPin[oszlopok] = {5, 4, 3, 2};** -
+- 
+
+###  Állapotváltozók szerepe
+
+- **int blindPos = 50;** — A redőny pozícióját tárolja 0–100% között. Ez alapján állítjuk a szervót.
+- **bool autoEnabled = false;** — Alapból kikapcsolt automata mód. Csak gombnyomásra lehet bekapcsolni.
+- **unsigned long bootQuietMs = 5000;** — Az indulási csendes idő. 5 másodpercig nem mozdul a rendszer bekapcsolás után.
+
 ### A teljes Forráskód:
 ```			
 // Fejlécállományok betöltése
